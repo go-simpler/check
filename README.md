@@ -1,5 +1,10 @@
 # check
 
+[![ci](https://github.com/junk1tm/check/actions/workflows/go.yml/badge.svg)](https://github.com/junk1tm/check/actions/workflows/go.yml)
+[![docs](https://pkg.go.dev/badge/github.com/junk1tm/check.svg)](https://pkg.go.dev/github.com/junk1tm/check)
+[![report](https://goreportcard.com/badge/github.com/junk1tm/check)](https://goreportcard.com/report/github.com/junk1tm/check)
+[![codecov](https://codecov.io/gh/junk1tm/check/branch/main/graph/badge.svg)](https://codecov.io/gh/junk1tm/check)
+
 Convenience helpers to perform validations of any kind
 
 ## 📦 Install
