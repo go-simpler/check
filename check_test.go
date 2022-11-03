@@ -37,6 +37,23 @@ func TestCheck(t *testing.T) {
 		}
 	})
 
-	// TODO(jun1ktm): test That's panic case
-	// TODO(jun1ktm): test FirstError's nil case
+	t.Run("panic on nil error", func(t *testing.T) {
+		defer func() {
+			if r := recover(); r == nil {
+				t.Errorf("want panic")
+			}
+		}()
+
+		check.That(false, nil)
+	})
+
+	t.Run("all conditions are true", func(t *testing.T) {
+		err := check.
+			Thatf(true, "not an error").
+			FirstError()
+
+		if err != nil {
+			t.Errorf("got %v; want no error", err)
+		}
+	})
 }
