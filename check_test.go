@@ -47,6 +47,7 @@ func TestCheck(t *testing.T) {
 		check.That(false, nil)
 	})
 
+	//nolint:gofumpt // empty line before `if err != nil` is ok here
 	t.Run("all conditions are true", func(t *testing.T) {
 		err := check.
 			Thatf(true, "not an error").
