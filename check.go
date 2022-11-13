@@ -9,24 +9,25 @@ import "fmt"
 
 // That checks whether cond is true, and if not, records the error. That panics
 // if the error is nil.
-func That(cond bool, err error) *state {
-	return new(state).That(cond, err)
+func That(cond bool, err error) *State {
+	return new(State).That(cond, err)
 }
 
 // Thatf checks whether cond is true, and if not, creates an error from format
 // and args, then records it.
-func Thatf(cond bool, format string, args ...any) *state {
-	return new(state).Thatf(cond, format, args...)
+func Thatf(cond bool, format string, args ...any) *State {
+	return new(State).Thatf(cond, format, args...)
 }
 
-// state holds the errors of the failed conditions.
-type state struct {
+// State holds the errors of the failed conditions. It is exported only for the
+// purpose of documentation, do not use it directly.
+type State struct {
 	errs []error
 }
 
 // That checks whether cond is true, and if not, records the error. That panics
 // if the error is nil.
-func (s *state) That(cond bool, err error) *state {
+func (s *State) That(cond bool, err error) *State {
 	if err == nil {
 		panic("check: a nil error is provided")
 	}
@@ -38,12 +39,12 @@ func (s *state) That(cond bool, err error) *state {
 
 // Thatf checks whether cond is true, and if not, creates an error from format
 // and args, then records it.
-func (s *state) Thatf(cond bool, format string, args ...any) *state {
+func (s *State) Thatf(cond bool, format string, args ...any) *State {
 	return s.That(cond, fmt.Errorf(format, args...))
 }
 
 // FirstError returns the error of the first failed condition.
-func (s *state) FirstError() error {
+func (s *State) FirstError() error {
 	if len(s.errs) > 0 {
 		return s.errs[0]
 	}
@@ -51,4 +52,4 @@ func (s *state) FirstError() error {
 }
 
 // AllErrors returns the errors of all failed conditions.
-func (s *state) AllErrors() []error { return s.errs }
+func (s *State) AllErrors() []error { return s.errs }
