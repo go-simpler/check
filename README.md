@@ -1,16 +1,16 @@
 # check
 
-[![ci](https://github.com/junk1tm/check/actions/workflows/go.yml/badge.svg)](https://github.com/junk1tm/check/actions/workflows/go.yml)
-[![docs](https://pkg.go.dev/badge/github.com/junk1tm/check.svg)](https://pkg.go.dev/github.com/junk1tm/check)
-[![report](https://goreportcard.com/badge/github.com/junk1tm/check)](https://goreportcard.com/report/github.com/junk1tm/check)
-[![codecov](https://codecov.io/gh/junk1tm/check/branch/main/graph/badge.svg)](https://codecov.io/gh/junk1tm/check)
+[![ci](https://github.com/go-simpler/check/actions/workflows/go.yml/badge.svg)](https://github.com/go-simpler/check/actions/workflows/go.yml)
+[![docs](https://pkg.go.dev/badge/github.com/go-simpler/check.svg)](https://pkg.go.dev/github.com/go-simpler/check)
+[![report](https://goreportcard.com/badge/github.com/go-simpler/check)](https://goreportcard.com/report/github.com/go-simpler/check)
+[![codecov](https://codecov.io/gh/go-simpler/check/branch/main/graph/badge.svg)](https://codecov.io/gh/go-simpler/check)
 
 Convenience helpers to perform validations of any kind
 
 ## 📦 Install
 
 ```shell
-go get github.com/junk1tm/check
+go get github.com/go-simpler/check
 ```
 
 ## 📋 Usage
