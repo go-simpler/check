@@ -1,3 +1,3 @@
-module github.com/junk1tm/check
+module github.com/go-simpler/check
 
 go 1.19
