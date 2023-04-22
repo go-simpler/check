@@ -4,7 +4,7 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/go-simpler/check"
+	"go-simpler.org/check"
 )
 
 func TestCheck(t *testing.T) {

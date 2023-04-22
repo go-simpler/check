@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/go-simpler/check"
+	"go-simpler.org/check"
 )
 
 var user = struct {
