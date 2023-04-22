@@ -1,3 +1,3 @@
-module github.com/go-simpler/check
+module go-simpler.org/check
 
 go 1.19
