@@ -1,8 +1,8 @@
 # check
 
-[![ci](https://github.com/go-simpler/check/actions/workflows/go.yml/badge.svg)](https://github.com/go-simpler/check/actions/workflows/go.yml)
-[![docs](https://pkg.go.dev/badge/go-simpler.org/check.svg)](https://pkg.go.dev/go-simpler.org/check)
-[![report](https://goreportcard.com/badge/go-simpler.org/check)](https://goreportcard.com/report/go-simpler.org/check)
+[![checks](https://github.com/go-simpler/check/actions/workflows/checks.yml/badge.svg)](https://github.com/go-simpler/check/actions/workflows/checks.yml)
+[![pkg.go.dev](https://pkg.go.dev/badge/go-simpler.org/check.svg)](https://pkg.go.dev/go-simpler.org/check)
+[![goreportcard](https://goreportcard.com/badge/go-simpler.org/check)](https://goreportcard.com/report/go-simpler.org/check)
 [![codecov](https://codecov.io/gh/go-simpler/check/branch/main/graph/badge.svg)](https://codecov.io/gh/go-simpler/check)
 
 Convenience helpers to perform validations of any kind
