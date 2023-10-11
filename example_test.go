@@ -22,16 +22,13 @@ func isEmail(string) bool { return false }
 var errEmptyName = errors.New("name must not be empty")
 
 func Example() {
-	errs := check.
+	err := check.
 		That(user.Name != "", errEmptyName).
 		Thatf(user.Age >= 18, "%d y.o. is too young", user.Age).
 		Thatf(isEmail(user.Email), "%s is invalid email", user.Email).
-		AllErrors() // OR FirstError() to check only the first error.
+		JoinErrors() // or FirstError() / AllErrors().
 
-	for _, err := range errs {
-		fmt.Println(err)
-	}
-
+	fmt.Println(err)
 	// Output:
 	// name must not be empty
 	// 10 y.o. is too young

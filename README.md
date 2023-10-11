@@ -16,12 +16,12 @@ go get go-simpler.org/check
 ## 📋 Usage
 
 Use `That`/`Thatf` to write conditions to check, multiple calls can be chained.
-The last call in the chain must be either `FirstError` or `AllErrors`.
+The last call in the chain must be `FirstError`, `AllErrors`, or `JoinErrors`.
 
 ```go
-errs := check.
+err := check.
     That(user.Name != "", errEmptyName).
     Thatf(user.Age >= 18, "%d y.o. is too young", user.Age).
     Thatf(isEmail(user.Email), "%s is invalid email", user.Email).
-    AllErrors() // OR FirstError() to check only the first error.
+    JoinErrors() // or FirstError() / AllErrors().
 ```

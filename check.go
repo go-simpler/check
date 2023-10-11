@@ -1,10 +1,13 @@
 // Package check provides convenience helpers to perform validations of any kind.
 //
-// Use That/Thatf to write conditions to check, multiple calls can be chained.
-// The last call in the chain must be either FirstError or AllErrors.
+// Use [That]/[Thatf] to write conditions to check, multiple calls can be chained.
+// The last call in the chain must be FirstError, AllErrors, or JoinErrors.
 package check
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 // That checks whether the condition is true, and if not, records the error.
 func That(cond bool, err error) *State {
@@ -16,7 +19,7 @@ func Thatf(cond bool, format string, args ...any) *State {
 	return new(State).Thatf(cond, format, args...)
 }
 
-// State holds the errors of the failed conditions.
+// State holds the recorded errors.
 // It is exported only for the purpose of documentation.
 type State struct {
 	errs []error
@@ -38,7 +41,7 @@ func (s *State) Thatf(cond bool, format string, args ...any) *State {
 	return s.That(cond, fmt.Errorf(format, args...))
 }
 
-// FirstError returns the error of the first failed condition.
+// FirstError returns the first recorded error.
 func (s *State) FirstError() error {
 	if len(s.errs) > 0 {
 		return s.errs[0]
@@ -46,5 +49,8 @@ func (s *State) FirstError() error {
 	return nil
 }
 
-// AllErrors returns the errors of all failed conditions.
+// AllErrors returns all the recorded errors.
 func (s *State) AllErrors() []error { return s.errs }
+
+// JoinErrors returns all the recorded errors joined via [errors.Join].
+func (s *State) JoinErrors() error { return errors.Join(s.errs...) }
