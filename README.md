@@ -20,23 +20,8 @@ The last call in the chain must be either `FirstError` or `AllErrors`.
 
 ```go
 errs := check.
-	That(user.Name != "", errEmptyName).
-	Thatf(user.Age >= 18, "%d y.o. is too young", user.Age).
-	Thatf(isEmail(user.Email), "%s is invalid email", user.Email).
-	AllErrors() // OR FirstError() to check only the first error
-```
-
-The same code without `check`:
-
-```go
-var errs []error
-if user.Name == "" {
-	errs = append(errs, errEmptyName)
-}
-if user.Age < 18 {
-	errs = append(errs, fmt.Errorf("%d y.o. is too young", user.Age))
-}
-if !isEmail(user.Email) {
-	errs = append(errs, fmt.Errorf("%s is invalid email", user.Email))
-}
+    That(user.Name != "", errEmptyName).
+    Thatf(user.Age >= 18, "%d y.o. is too young", user.Age).
+    Thatf(isEmail(user.Email), "%s is invalid email", user.Email).
+    AllErrors() // OR FirstError() to check only the first error.
 ```

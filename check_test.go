@@ -33,7 +33,7 @@ func TestCheck(t *testing.T) {
 		}
 
 		if errs[0] == nil || errs[1] == nil {
-			t.Errorf("want all errors to be not nil")
+			t.Errorf("want all errors to be non-nil")
 		}
 	})
 
@@ -47,7 +47,7 @@ func TestCheck(t *testing.T) {
 		check.That(false, nil)
 	})
 
-	//nolint:gofumpt // empty line before `if err != nil` is ok here
+	//nolint:gofumpt // empty line before `if err != nil` is ok here.
 	t.Run("all conditions are true", func(t *testing.T) {
 		err := check.
 			Thatf(true, "not an error").
