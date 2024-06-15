@@ -1,4 +1,4 @@
-// Package check provides convenience helpers to perform validations of any kind.
+// Package check implements functions for writing validations declaratively.
 //
 // Use [That]/[Thatf] to write conditions to check, multiple calls can be chained.
 // The last call in the chain must be FirstError, AllErrors, or JoinErrors.

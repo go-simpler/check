@@ -5,7 +5,7 @@
 [![goreportcard](https://goreportcard.com/badge/go-simpler.org/check)](https://goreportcard.com/report/go-simpler.org/check)
 [![codecov](https://codecov.io/gh/go-simpler/check/branch/main/graph/badge.svg)](https://codecov.io/gh/go-simpler/check)
 
-Convenience helpers to perform validations of any kind
+Write any validations declaratively.
 
 ## 📦 Install
 
